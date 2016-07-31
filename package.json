@@ -5,6 +5,9 @@
   "main": "entry.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors --inline"
+  },
   "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
