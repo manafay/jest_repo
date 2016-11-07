@@ -1,13 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   devtool: 'sourcemap',
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: 'build',
     filename: 'bundle.js',
   },
   module: {
@@ -28,5 +29,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new NpmInstallPlugin(),
+    new WebpackBrowserPlugin(),
+    new HtmlWebpackPlugin({ title: 'Webpack App' }),
   ],
 };
