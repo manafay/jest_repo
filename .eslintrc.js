@@ -1,27 +1,20 @@
 module.exports = {
-  "parser": "babel-eslint",
-  "extends": "airbnb",
-  "installedESLint": true,
-  "plugins": [
-    "react",
-    "flowtype",
-  ],
-  "rules": {
-    "no-console": "off",
-    "flowtype/define-flow-type": 1,
-    "flowtype/space-after-type-colon": [
-      1,
-      "always"
-    ],
-    "flowtype/space-before-type-colon": [
-      1,
-      "never"
-    ],
-    "flowtype/use-flow-type": 1
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
   },
-  "settings": {
-    "flowtype": {
-      "onlyFilesWithFlowAnnotation": false
-    }
+  "env": {
+    "jest": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "arrow-parens": ["warn", "as-needed"],
+    "no-console": "warn",
+    "curly": ["error", "multi"]
   }
-};
+}
