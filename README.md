@@ -38,8 +38,9 @@ Simple Javascript project for ES6 development using [eslint](http://eslint.org/)
 
         code --install-extension EditorConfig.EditorConfig
         code --install-extension dbaeumer.vscode-eslint
-        code --install-extension msjsdiag.debugger-for-chrome     
+        code --install-extension msjsdiag.debugger-for-chrome
 
+  On Mac, you might have to [install shell command](https://code.visualstudio.com/docs/setup/mac).
 ## License
 
 MIT
