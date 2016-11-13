@@ -6,6 +6,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "preinstall": "npm install -g eslint eslint-plugin-import eslint-config-airbnb-base",
     "start": "webpack-dev-server",
     "lint": "eslint src/",
     "test": "jest"
