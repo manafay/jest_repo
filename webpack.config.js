@@ -31,5 +31,6 @@ module.exports = {
     new NpmInstallPlugin(),
     new WebpackBrowserPlugin(),
     new HtmlWebpackPlugin({ title: 'Webpack App' }),
+    new webpack.NoErrorsPlugin(),
   ],
 };
