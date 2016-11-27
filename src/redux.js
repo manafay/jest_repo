@@ -1,22 +1,23 @@
-
-
-function createStore(state) {
-  let globalState = {};
+function createStore(reducer, initialState) {
+  let globalState = initialState;
   const listeners = [];
 
   const getState = () => globalState;
 
+  const isAllowed = (type) => typeof(type) === 'string';
+
   function createAction(actionType) {
     const action = {};
-    if (actionType)
-      action.type = actionType;
-    return action;
+    if (isAllowed(actionType))
+        action.type = actionType.toUpperCase();
+        return action;
+    return undefined;
   }
 
   const action = actionType => createAction(actionType);
 
   const dispatch = actionType => {
-    action(actionType);
+    const state = reducer(globalState, action(actionType));
     if (globalState !== state)
       globalState = state;
     listeners.forEach(l => l);
