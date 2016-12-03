@@ -8,10 +8,11 @@ const counter = (prevState, currentAction) => {
       return { count: prevState.count - 2 };
     default:
       return prevState;
-  };
+  }
+};
 
 test('getState', () => {
-  const store = createStore(todos, { count: 0 });
+  const store = createStore(counter, { count: 0 });
   expect(store.getState()).not.toBeNull();
   expect(store.getState()).toEqual({ count: 0 });
 });

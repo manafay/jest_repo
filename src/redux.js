@@ -4,14 +4,13 @@ function createStore(reducer, initialState) {
 
   const getState = () => globalState;
 
-  const isAllowed = (type) => typeof(type) === 'string';
+  const isAllowed = type => typeof (type) === 'string';
 
   function createAction(actionType) {
     const action = {};
     if (isAllowed(actionType))
-        action.type = actionType.toUpperCase();
-        return action;
-    return undefined;
+      action.type = actionType.toUpperCase();
+    return action;
   }
 
   const action = actionType => createAction(actionType);
