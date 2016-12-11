@@ -5,7 +5,7 @@ function createReducer(initialState, actions) {
 
   const reducer = (state = globalState, action) => {
     Object.keys(allActions).filter(key => action.type === key)
-                           .map(key => key(state, action));
+                           .map(key => allActions[key](state, action));
     return state;
   };
   return { reducer };
@@ -37,4 +37,3 @@ export default createReducer;
 //
 // const INCREMENT = 'INCREMENT';
 // console.log(r.reducer({ count: 4 }, createAction(INCREMENT)));
-// console.log(r.check(INCREMENT));
